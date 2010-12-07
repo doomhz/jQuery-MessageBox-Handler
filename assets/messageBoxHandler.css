@@ -1,0 +1,27 @@
+.message-box {
+	width: 400px;
+	overflow: hidden;
+}
+
+.message-box textarea {
+	width: 400px;
+	height: 100px;
+	border: 1px solid #999;
+}
+
+.message-box .counter-error-length {
+	color: red;
+}
+
+.message-box span {
+	display: block;
+	float: right;
+}
+
+.message-box button {
+	float: left;
+}
+
+.message-box .disabled {
+	color:#fff;
+}

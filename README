@@ -1,1 +1,37 @@
-Soon...
+jQuery MessagBox Handler Demo
+
+
+How To
+
+   1. Include the messageBox.css style
+   2. Include the messageBoxHandler.min.js file
+   3. Activate the plug-in: $('#messageBox').messageBoxHandler();
+
+
+Options
+
+maxUpdateChars (140):
+    Maximum chars number user can fill in.
+messageBody (null):
+    The message body textarea selector. By default grabs the first textarea in the current element.
+submitBtn (null):
+    The submit button selector. By default grabs the first submit button in the current element.
+leftCharsCounterClass (null):
+    The left chars counter selector. By default grabs the first span in the current element.
+counterErrorClass ('counter-error-length'):
+    A class that will be added to the counter when the textarea gets too much text.
+disabledClass ('disabled'):
+    A class that will be appended to the submit button when the text is not valid.
+emptyMessageText (''):
+    A text that appears when the textarea is empty. It can grab the title attribute of the textarea if present for the sake of the translation.
+
+
+Implementation
+
+Very simple example
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('.message-box').messageBoxHandler();
+	});
+</script>

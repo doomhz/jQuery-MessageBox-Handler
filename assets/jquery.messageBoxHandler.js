@@ -24,17 +24,18 @@
 		this.config = {maxUpdateChars:'140',
 					   messageBody:null,
 					   submitBtn:null,
-					   leftCharsCounterClass:'left-chars-counter',
+					   leftCharsCounterClass:null,
 					   counterErrorClass:'counter-error-length',
-					   disabledClass:'disabled'
+					   disabledClass:'disabled',
+					   emptyMessageText:''
 					  };
 
 		$.extend(this.config, options);
 
-		this.counter = $('.' + this.config.leftCharsCounterClass, this);
-		this.submitBtn = this.config.submitBtn;
-		this.messageBody = this.config.messageBody;
-		this.updateListsDefaultMessage = this.messageBody.attr('title') || '';
+		this.counter = (this.config.leftCharsCounterClass && $(this.config.leftCharsCounterClass, this)) || $('span:first', this);
+		this.submitBtn = (this.config.submitBtn && $(this.config.submitBtn)) || $('button[type="submit"]:first', this);
+		this.messageBody = (this.config.messageBody && $(this.config.messageBody)) || $('textarea:first', this);
+		this.defaultEmptyMessage = this.messageBody.attr('title') || this.config.emptyMessageText;
 
 		var self = this;
 
@@ -42,12 +43,12 @@
 			//Handle focus/blur/keyup message form events
 			//count left chars and disable button
 			this.messageBody.focus(function(){
-				if(self.messageBody.val() == self.updateListsDefaultMessage){
+				if(self.messageBody.val() == self.defaultEmptyMessage){
 					self.messageBody.val('');
 				}
 			}).blur(function(){
-				if(self.messageBody.val() == self.updateListsDefaultMessage || self.messageBody.val() == ''){
-					self.messageBody.val(self.updateListsDefaultMessage);
+				if(self.messageBody.val() == self.defaultEmptyMessage || self.messageBody.val() == ''){
+					self.messageBody.val(self.defaultEmptyMessage);
 				}
 			}).keyup(function () {
 				var messageLenght = self.messageBody.val().length;

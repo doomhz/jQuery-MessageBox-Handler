@@ -10,6 +10,16 @@
   <body>
     <h1>jQuery MessagBox Handler Demo</h1>
 
+	<div class="message-box">
+		<form>
+			<textarea title="What are you doing?" rows="10" cols="70" name="update">What are you doing?</textarea>
+			<span>140</span>
+			<button type="submit">
+				Send
+			</button>
+		</form>
+	</div>
+
 	<h2>How To</h2>
 
 		<ol>
@@ -21,8 +31,33 @@
 		<h2>Options</h2>
 
 		<dl>
-			<dt><b></b> ():</dt>
+			<dt><b>maxUpdateChars</b> (140):</dt>
 			<dd>
+				Maximum chars number user can fill in.
+			</dd>
+			<dt><b>messageBody</b> (null):</dt>
+			<dd>
+				The message body textarea selector. By default grabs the first textarea in the current element.
+			</dd>
+			<dt><b>submitBtn</b> (null):</dt>
+			<dd>
+				The submit button selector. By default grabs the first submit button in the current element.
+			</dd>
+			<dt><b>leftCharsCounterClass</b> (null):</dt>
+			<dd>
+				The left chars counter selector. By default grabs the first span in the current element.
+			</dd>
+			<dt><b>counterErrorClass</b> ('counter-error-length'):</dt>
+			<dd>
+				A class that will be added to the counter when the textarea gets too much text.
+			</dd>
+			<dt><b>disabledClass</b> ('disabled'):</dt>
+			<dd>
+				A class that will be appended to the submit button when the text is not valid.
+			</dd>
+			<dt><b>emptyMessageText</b> (''):</dt>
+			<dd>
+				A text that appears when the textarea is empty. It can grab the title attribute of the textarea if present for the sake of the translation.
 			</dd>
 		</dl>
 
@@ -33,14 +68,14 @@
 		<pre>
 &lt;script type=&quot;text/javascript&quot;&gt;
 	$(document).ready(function () {
-
+		$('.message-box').messageBoxHandler();
 	});
 &lt;/script&gt;
 		</pre>
 
 		<script type="text/javascript">
 			$(document).ready(function () {
-
+				$('.message-box').messageBoxHandler();
 			});
 		</script>
 
