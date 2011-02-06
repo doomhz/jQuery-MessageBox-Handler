@@ -10,10 +10,14 @@
 * 3. Disables the submit button if the box is empty or the number of chars reached the limit.
 *
 * @author Dumitru Glavan
+* @link http://dumitruglavan.com
 * @version 1.0
 * @requires jQuery v1.3.2 or later
 *
-* Examples and documentation at: https://github.com/doomhz/jQuery-MessageBox-Handler
+* Examples and documentation at: http://dumitruglavan.com/jquery-messagebox-handler-plugin/
+* Official jQuery plugin page: http://plugins.jquery.com/project/messagebox-handler-plugin
+* Find source on GitHub: https://github.com/doomhz/jQuery-MessageBox-Handler
+*
 * Dual licensed under the MIT and GPL licenses:
 *   http://www.opensource.org/licenses/mit-license.php
 *   http://www.gnu.org/licenses/gpl.html
