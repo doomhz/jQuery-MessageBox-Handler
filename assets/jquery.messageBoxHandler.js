@@ -10,8 +10,8 @@
 * 3. Disables the submit button if the box is empty or the number of chars reached the limit.
 *
 * @author Dumitru Glavan
-* @link http://dumitruglavan.com
-* @version 1.0
+* @link http://dumitruglavan.com/jquery-messagebox-handler-plugin/
+* @version 1.1 (16-JUL-2011)
 * @requires jQuery v1.3.2 or later
 *
 * Examples and documentation at: http://dumitruglavan.com/jquery-messagebox-handler-plugin/
@@ -60,9 +60,9 @@
 
 				$(self.counter).text(leftChars);
 				if((messageLenght > 0) && (leftChars >= 0)){
-					self.submitBtn.attr('disabled', '').removeClass(self.config.disabledClass);
+					self.submitBtn.attr('disabled', false).removeClass(self.config.disabledClass);
 				} else {
-					self.submitBtn.attr('disabled', 'disabled').addClass(self.config.disabledClass);
+					self.submitBtn.attr('disabled', true).addClass(self.config.disabledClass);
 				}
 				if (leftChars < 0) {
 					self.counter.addClass(self.config.counterErrorClass);
@@ -72,7 +72,7 @@
 			});
 
 			//Disable Update Button by default
-			self.submitBtn.attr('disabled', 'disabled').addClass(self.config.disabledClass);
+			self.submitBtn.attr('disabled', true).addClass(self.config.disabledClass);
 		}
 	}
 })(jQuery)
